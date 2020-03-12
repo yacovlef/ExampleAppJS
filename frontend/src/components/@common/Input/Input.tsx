@@ -14,8 +14,8 @@ const Input = ({ label, ...props }: IInputProps) => {
     return (
         <>
             <InputLabel htmlFor={props.name} hasError={hasError}>{label}</InputLabel>
-
-            <InputField {...field} {...props} />
+            
+            <InputField {...field} {...props} autoComplete="off" />
 
             {hasError ? (
                 <InputError>{meta.error}</InputError>
