@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 
-import { LoadingLayout, LoadingText } from './loading.style';
+import { LoadingLayout, LoadingSpinner } from './loading.style';
 
 const Loading: FC = () => {
     const [hasLoading, setHasLoading] = useState(false);
@@ -19,7 +19,7 @@ const Loading: FC = () => {
 
     return (
         <LoadingLayout>
-            <LoadingText>Загрузка...</LoadingText>
+            <LoadingSpinner />
         </LoadingLayout>
     );
 };
