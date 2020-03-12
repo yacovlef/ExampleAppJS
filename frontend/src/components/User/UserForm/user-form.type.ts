@@ -1,5 +1,12 @@
 import { ThunkAction } from 'redux-thunk';
 
+import { IModalActionTypes } from '../../@common/Modal/modal.type';
+import { submitUserFormCreateAction } from './user-form.action';
+
+export interface IUserFormProps {
+    submitUserFormAction: typeof submitUserFormCreateAction
+}
+
 export interface IUserFormState {
     loading: boolean;
     error: null | object;
@@ -24,4 +31,4 @@ interface ISubmitUserFormFailureAction {
 
 export type ISubmitUserFormActionTypes = ISubmitUserFormRequestAction | ISubmitUserFormSuccessAction | ISubmitUserFormFailureAction;
 
-export type ISubmitUserFormThunkActionTypes = ThunkAction<void, undefined, undefined, ISubmitUserFormActionTypes>;
+export type ISubmitUserFormThunkActionTypes = ThunkAction<void, undefined, undefined, ISubmitUserFormActionTypes | IModalActionTypes>;

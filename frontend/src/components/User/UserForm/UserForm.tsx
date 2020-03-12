@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -7,9 +8,12 @@ import { UserFormRow } from './user-form.style';
 import Input from '../../@common/Input';
 import Button from '../../@common/Button';
 
+import { IUserFormProps } from './user-form.type';
 import { IUserLIstItem } from '../UserListItem/user-list-item.type';
 
-const UserForm: FC = () => {
+const UserForm: FC<IUserFormProps> = ({ submitUserFormAction }) => {
+
+    const dispatch = useDispatch();
 
     return (
         <Formik
@@ -22,7 +26,7 @@ const UserForm: FC = () => {
                 firstName: Yup.string().required('Обязательно'),
                 lastName: Yup.string().required('Обязательно'),
                 email: Yup.string().email('Не корректная эл. почта').required('Обязательно')})}
-            onSubmit = {(values: any) => { alert(JSON.stringify(values, null, 2)) }}>
+            onSubmit = {(data) => {dispatch(submitUserFormAction(data))}}>
 
             <Form>
                 <UserFormRow>

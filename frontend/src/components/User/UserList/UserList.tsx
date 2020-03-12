@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useCallback } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { IUserListRootState } from './user-list.type';
@@ -16,13 +16,9 @@ const UserList: FC = () => {
 
     const dispatch = useDispatch();
 
-    const fetchUserListActionDispatch = useCallback(() => {
+    useEffect(() => {
         dispatch(fetchUserListAction())
     }, [dispatch]);
-
-    useEffect(() => {
-        fetchUserListActionDispatch();
-    }, [fetchUserListActionDispatch]);
 
     if (error) {
         return <Error />;

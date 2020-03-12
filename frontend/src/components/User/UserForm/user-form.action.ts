@@ -12,6 +12,8 @@ import { submitUserFormCreateService, submitUserFormUpdateService } from './user
 
 import { fetchUserListAction } from '../UserList/user-list.action';
 
+import { closeModalAction } from '../../@common/Modal/modal.action';
+
 const submitUserFormRequestAction = (): ISubmitUserFormActionTypes => {
     return  {
         type: SUBMIT_USER_FORM_REQUEST
@@ -39,6 +41,8 @@ const submitUserFormCreateAction = (data: IUserLIstItem): ISubmitUserFormThunkAc
             dispatch(submitUserFormSuccessAction());
 
             dispatch(fetchUserListAction());
+
+            dispatch(closeModalAction());
         })
         .catch((error) => dispatch(submitUserFormFailureAction(error)));
 };
@@ -51,6 +55,8 @@ const submitUserFormUpdateAction = (data: IUserLIstItem): ISubmitUserFormThunkAc
             dispatch(submitUserFormSuccessAction());
 
             dispatch(fetchUserListAction());
+
+            dispatch(closeModalAction());
         })
         .catch((error) => dispatch(submitUserFormFailureAction(error)));
 };
