@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { IHeaderMenuListProps } from './header-menu.type';
 
@@ -80,7 +80,7 @@ const HeaderMenuItem = styled.li`
     }
 `;
 
-const HeaderMenuItemLink = styled(Link)`
+const HeaderMenuItemLink = styled(NavLink)`
     color: ${GRAY};
     text-decoration: none;
 `;
