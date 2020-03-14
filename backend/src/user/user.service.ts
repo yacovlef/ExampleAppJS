@@ -13,7 +13,9 @@ export class UserService {
     ) {}
 
     async showAll(): Promise<UserEntity[]> {
-        return await this.userRepository.find();
+        return await this.userRepository.find({ 
+            order: {createdAt: 'DESC'}
+        });
     }
 
     async create(data: UserDTO) {
