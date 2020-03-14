@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import { IUserLIstItemProps } from './user-list-item.type';
 
+import UserEdit from '../UserEdit';
+
 import {
     UserListItemLayout,
     UserListItemColOne,
@@ -37,7 +39,7 @@ const UserListItem: FC<IUserLIstItemProps> = ({ user }) => {
             </UserListItemColTwo>
             <UserListItemColTree>
                 <UserListItemRow>
-                    <Button>Редактировать</Button>
+                    <UserEdit user={user} />
                 </UserListItemRow>
 
                 <UserListItemRow>

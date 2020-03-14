@@ -11,22 +11,26 @@ import Button from '../../@common/Button';
 import { IUserFormProps } from './user-form.type';
 import { IUserLIstItem } from '../UserListItem/user-list-item.type';
 
-const UserForm: FC<IUserFormProps> = ({ submitUserFormAction }) => {
+const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
 
     const dispatch = useDispatch();
 
+    const values = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''};
+
+    const initialValues: IUserLIstItem = user || values;
+
     return (
         <Formik
-            initialValues = {{
-                firstName: '',
-                lastName: '',
-                email: '',
-                password: ''} as IUserLIstItem}
+            initialValues = {initialValues}
             validationSchema = {Yup.object({
                 firstName: Yup.string().required('Обязательно'),
                 lastName: Yup.string().required('Обязательно'),
                 email: Yup.string().email('Не корректная эл. почта').required('Обязательно')})}
-            onSubmit = {(data) => {dispatch(submitUserFormAction(data))}}>
+            onSubmit = {(user) => {dispatch(submitUserFormAction(user))}}>
 
             <Form>
                 <UserFormRow>
@@ -57,7 +61,7 @@ const UserForm: FC<IUserFormProps> = ({ submitUserFormAction }) => {
                     <Input
                         label="Пароль"
                         name="password"
-                        type="text"
+                        type="password"
                     />
                 </UserFormRow>
 

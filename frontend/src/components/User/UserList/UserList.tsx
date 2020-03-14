@@ -30,9 +30,9 @@ const UserList: FC = () => {
 
     return (
         <UserListLayout>
-            {data.map(({id, ...user}) =>
+            {data.map((user) =>
                 <UserListItem
-                    key={id}
+                    key={user.id}
                     user={user} />)}
         </UserListLayout>
     );
