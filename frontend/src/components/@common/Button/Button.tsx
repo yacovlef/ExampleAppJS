@@ -10,6 +10,8 @@ const Button = styled.button<IButtonProps>`
     color: ${GRAYDARK};
     background-color: transparent;
 
+    cursor: pointer;
+
     &:hover {
         color: white;
         background-color: ${GRAYDARK}
