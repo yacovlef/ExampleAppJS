@@ -16,21 +16,21 @@ const userListReducer = (state = initialState, action: IFetchUserListActionTypes
     switch (action.type) {
         case FETCH_USER_LIST_REQUEST:
             return {
-                data: [],
+                ...state,
                 loading: true,
                 error: null
             };
 
         case FETCH_USER_LIST_SUCCESS:
             return {
+                ...state,
                 data: action.payload,
-                loading: false,
-                error: null
+                loading: false
             };
 
         case FETCH_USER_LIST_FAILURE:
             return {
-                data: [],
+                ...state,
                 loading: false,
                 error: action.payload
             };
