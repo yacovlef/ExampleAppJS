@@ -27,7 +27,9 @@ export class UserService {
     }
 
     async update(id: number, data: UserDTO) {
-        return await this.userRepository.update({id}, data);
+        const {createdAt, updatedAt, ...user} = data;
+
+        return await this.userRepository.update({id}, user);
     }
 
     async destroy(id: number) {
