@@ -10,7 +10,7 @@ const useLoading = (loading: boolean) => {
             setLoading(true);
         }, 1000);
     }
-
+    
     if (!loading && hasLoading) {
         setLoading(false);
     }
@@ -18,7 +18,6 @@ const useLoading = (loading: boolean) => {
     useEffect(() => {
         return () => {
             if (timer) {
-                console.log(timer);
                 clearTimeout(timer);
             }
         }
