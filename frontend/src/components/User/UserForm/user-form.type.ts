@@ -1,13 +1,19 @@
 import { ThunkAction } from 'redux-thunk';
 
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
 import { IModalActionTypes } from '../../@common/Modal/modal.type';
 
 import { submitUserFormCreateAction } from './user-form.action';
 
+export interface IUserFormUser {
+    id?: number;
+    lastName: string;
+    firstName: string;
+    email: string;
+}
+
 export interface IUserFormProps {
     submitUserFormAction: typeof submitUserFormCreateAction;
-    user?: IUserLIstItem;
+    user?: IUserFormUser;
 }
 
 export interface IUserFormState {

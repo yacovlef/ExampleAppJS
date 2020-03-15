@@ -1,3 +1,5 @@
+import { IUserListItem } from '../UserListItem/user-list-item.type';
+
 import {
     FETCH_USER_LIST_REQUEST,
     FETCH_USER_LIST_SUCCESS,
@@ -5,8 +7,6 @@ import {
     IFetchUserListActionTypes,
     IFetchUserListThunkActionTypes
 } from './user-list.type';
-
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
 
 import { fetchUserListService } from './user-list.service';
 
@@ -16,7 +16,7 @@ const fetchUserListRequestAction = (): IFetchUserListActionTypes => {
     }
 }
 
-const fetchUserListSuccessAction = (payload: IUserLIstItem[]): IFetchUserListActionTypes => {
+const fetchUserListSuccessAction = (payload: IUserListItem[]): IFetchUserListActionTypes => {
     return  {
         type: FETCH_USER_LIST_SUCCESS,
         payload

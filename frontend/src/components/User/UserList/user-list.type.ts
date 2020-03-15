@@ -1,9 +1,9 @@
 import { ThunkAction } from 'redux-thunk';
 
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
+import { IUserListItem } from '../UserListItem/user-list-item.type';
 
 export interface IUserListState {
-    data: IUserLIstItem[];
+    data: IUserListItem[];
     loading: boolean;
     error: null | object;
 }
@@ -22,7 +22,7 @@ interface IFetchUserListRequestAction {
 
 interface IFetchUserListSuccessAction {
     type: typeof FETCH_USER_LIST_SUCCESS;
-    payload: IUserLIstItem[];
+    payload: IUserListItem[];
 }
 
 interface IFetchUserListFailureAction {

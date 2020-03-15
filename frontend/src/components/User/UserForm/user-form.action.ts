@@ -1,12 +1,11 @@
 import {
+    IUserFormUser,
     SUBMIT_USER_FORM_REQUEST,
     SUBMIT_USER_FORM_SUCCESS,
     SUBMIT_USER_FORM_FAILURE,
     ISubmitUserFormActionTypes,
     ISubmitUserFormThunkActionTypes
 } from './user-form.type';
-
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
 
 import { submitUserFormCreateService, submitUserFormUpdateService } from './user-form.service';
 
@@ -33,7 +32,7 @@ const submitUserFormFailureAction = (error: object): ISubmitUserFormActionTypes 
     }
 }
 
-const submitUserFormCreateAction = (data: IUserLIstItem): ISubmitUserFormThunkActionTypes => (dispatch) => {
+const submitUserFormCreateAction = (data: IUserFormUser): ISubmitUserFormThunkActionTypes => (dispatch) => {
     dispatch(submitUserFormRequestAction());
     
     submitUserFormCreateService(data)
@@ -47,7 +46,7 @@ const submitUserFormCreateAction = (data: IUserLIstItem): ISubmitUserFormThunkAc
         .catch((error) => dispatch(submitUserFormFailureAction(error)));
 };
 
-const submitUserFormUpdateAction = (data: IUserLIstItem): ISubmitUserFormThunkActionTypes => (dispatch) => {
+const submitUserFormUpdateAction = (data: IUserFormUser): ISubmitUserFormThunkActionTypes => (dispatch) => {
     dispatch(submitUserFormRequestAction());
     
     submitUserFormUpdateService(data)

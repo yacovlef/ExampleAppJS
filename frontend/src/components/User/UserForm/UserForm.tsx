@@ -8,8 +8,7 @@ import { UserFormRow } from './user-form.style';
 import Input from '../../@common/Input';
 import Button from '../../@common/Button';
 
-import { IUserFormProps } from './user-form.type';
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
+import { IUserFormUser, IUserFormProps } from './user-form.type';
 
 const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
 
@@ -21,7 +20,7 @@ const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
         email: '',
         password: ''};
 
-    const initialValues: IUserLIstItem = user || values;
+    const initialValues: IUserFormUser = user || values;
 
     return (
         <Formik

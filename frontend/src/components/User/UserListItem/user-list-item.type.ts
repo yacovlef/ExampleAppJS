@@ -1,10 +1,10 @@
-export interface IUserLIstItem {
-    id?: number;
+export interface IUserListItem {
+    id: number;
     lastName: string;
     firstName: string;
     email: string;
 }
 
-export interface IUserLIstItemProps {
-    user: IUserLIstItem;
+export interface IUserListItemProps {
+    user: IUserListItem;
 }

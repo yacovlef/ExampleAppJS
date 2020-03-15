@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 
-import { IUserLIstItemProps } from './user-list-item.type';
+import { IUserListItemProps } from './user-list-item.type';
 
 import UserEdit from '../UserEdit';
+import UserDelete from '../UserDelete';
 
 import {
     UserListItemLayout,
@@ -12,9 +13,7 @@ import {
     UserListItemRow,
     UserListItemLabel } from './user-list-item.style';
 
-import Button from '../../@common/Button';
-
-const UserListItem: FC<IUserLIstItemProps> = ({ user }) => {
+const UserListItem: FC<IUserListItemProps> = ({ user }) => {
     const {firstName, lastName, email} = user;
 
     return (
@@ -43,7 +42,7 @@ const UserListItem: FC<IUserLIstItemProps> = ({ user }) => {
                 </UserListItemRow>
 
                 <UserListItemRow>
-                    <Button>Удалить</Button>
+                    <UserDelete user={user} />
                 </UserListItemRow>
             </UserListItemColTree>
         </UserListItemLayout>

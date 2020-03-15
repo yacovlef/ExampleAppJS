@@ -1,12 +1,12 @@
 import api from '../../../utils/api';
 
-import { IUserLIstItem } from '../UserListItem/user-list-item.type';
+import { IUserFormUser } from './user-form.type';
 
-const submitUserFormCreateService = (data: IUserLIstItem) => {
+const submitUserFormCreateService = (data: IUserFormUser) => {
     return api.post('/users', data);
 };
 
-const submitUserFormUpdateService = (data: IUserLIstItem) => {
+const submitUserFormUpdateService = (data: IUserFormUser) => {
     const { id, ...user } = data;
 
     return api.put(`/users/${id}`, user);
