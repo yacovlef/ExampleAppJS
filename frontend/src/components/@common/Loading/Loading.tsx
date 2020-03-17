@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 
-import { LoadingLayout, LoadingSpinner } from './loading.style';
+import Spinner from '../Spinner';
+
+import { LoadingLayout } from './loading.style';
 
 const Loading: FC = () => {
     return (
         <LoadingLayout>
-            <LoadingSpinner />
+            <Spinner />
         </LoadingLayout>
     );
 };
