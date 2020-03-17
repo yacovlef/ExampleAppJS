@@ -1,5 +1,5 @@
 import React, { FC, FormEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
     UserFormDeleteRow,
@@ -8,12 +8,14 @@ import {
 
 import Button from '../../@common/Button';
 
-import { IUserFormDeleteProps } from './user-form-delete.type';
+import { IUserFormDeleteProps, IUserFormDeleteRootState } from './user-form-delete.type';
 
 import { submitUserFormDeleteAction } from './user-form-delete.action';
 
 const UserFormDelete: FC<IUserFormDeleteProps> = ({ user }) => {
     const { id, firstName, lastName } = user;
+
+    const { loading } = useSelector(({ userFormDelete }: IUserFormDeleteRootState) => userFormDelete);
 
     const dispatch = useDispatch();
 
@@ -32,6 +34,7 @@ const UserFormDelete: FC<IUserFormDeleteProps> = ({ user }) => {
                 <Button
                     type="submit"
                     size="large"
+                    loading={loading}
                     block>Удалить</Button>
             </UserFormDeleteRow>
         </UserFormDeleteForm>

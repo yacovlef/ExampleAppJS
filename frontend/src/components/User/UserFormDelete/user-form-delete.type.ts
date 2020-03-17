@@ -12,6 +12,10 @@ export interface IUserFormDeleteState {
     error: null | object;
 }
 
+export interface IUserFormDeleteRootState {
+    userFormDelete: IUserFormDeleteState;
+}
+
 export const SUBMIT_USER_FORM_DELETE_REQUEST = 'SUBMIT_USER_FORM_DELETE_REQUEST';
 export const SUBMIT_USER_FORM_DELETE_SUCCESS = 'SUBMIT_USER_FORM_DELETE_SUCCESS';
 export const SUBMIT_USER_FORM_DELETE_FAILURE = 'SUBMIT_USER_FORM_DELETE_FAILURE';
