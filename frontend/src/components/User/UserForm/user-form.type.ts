@@ -21,6 +21,10 @@ export interface IUserFormState {
     error: null | object;
 }
 
+export interface IUserFormRootState {
+    userForm: IUserFormState;
+}
+
 export const SUBMIT_USER_FORM_REQUEST = 'SUBMIT_USER_FORM_REQUEST';
 export const SUBMIT_USER_FORM_SUCCESS = 'SUBMIT_USER_FORM_SUCCESS';
 export const SUBMIT_USER_FORM_FAILURE = 'SUBMIT_USER_FORM_FAILURE';

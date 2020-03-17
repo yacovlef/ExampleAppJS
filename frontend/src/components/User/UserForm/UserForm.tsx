@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
@@ -8,9 +8,11 @@ import { UserFormRow } from './user-form.style';
 import Input from '../../@common/Input';
 import Button from '../../@common/Button';
 
-import { IUserFormUser, IUserFormProps } from './user-form.type';
+import { IUserFormUser, IUserFormProps, IUserFormRootState } from './user-form.type';
 
 const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
+
+    const { loading } = useSelector(({ userForm }: IUserFormRootState) => userForm);
 
     const dispatch = useDispatch();
 
@@ -68,6 +70,7 @@ const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
                     <Button
                         type="submit"
                         size="large"
+                        loading={loading}
                         block>Сохранить</Button>
                 </UserFormRow>
             </Form>
