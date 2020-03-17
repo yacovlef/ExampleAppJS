@@ -1,7 +1,13 @@
 import React from 'react';
 
+import { IndexLayout } from './index.style';
+
 const Index = () => {
-    return <h1>Index</h1>;
+    return (
+        <IndexLayout>
+            <h1>ExampleAppJS</h1>
+        </IndexLayout>
+    );
 };
 
 export default Index;
