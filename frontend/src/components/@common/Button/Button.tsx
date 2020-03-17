@@ -1,36 +1,15 @@
-import styled, { css } from 'styled-components';
+import React, { FC } from 'react';
+
+import Spinner from '../Spinner';
 
 import { IButtonProps } from './buttom.type';
 
-import { GRAYDARK } from '../../../constants/color';
+import { ButtonStyle } from './style.button';
 
-const Button = styled.button<IButtonProps>`
-    border: 1px solid ${GRAYDARK};
-    border-radius: 2.5px;
-    color: ${GRAYDARK};
-    background-color: transparent;
+const Button: FC<IButtonProps> = ({ loading, children, ...props }) => {
+    const renderChildren = loading ? <Spinner size='small' /> : children;
 
-    cursor: pointer;
-
-    &:hover {
-        color: white;
-        background-color: ${GRAYDARK}
-    }
-
-    ${({ size }) => size === 'large' && css`
-        font-size: 1.25rem;
-        padding: 0.5rem;
-    `}
-
-    ${({ block }) => block && css`
-        width: 100%;
-    `}
-
-    @media (max-width: 768px) {
-        ${({ responsive }) => responsive && css`
-            width: 100%;
-        `}
-    }
-`;
+    return <ButtonStyle {...props}>{renderChildren}</ButtonStyle>;
+}
 
 export default Button;
