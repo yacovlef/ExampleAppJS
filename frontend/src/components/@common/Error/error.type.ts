@@ -1,3 +1,3 @@
 export interface IErrorProps {
-    description?: string;
+    size?: 'small';
 }

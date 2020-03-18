@@ -1,14 +1,33 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const ErrorLayout = styled.div`
-    text-align: center;
-`;
+import { IErrorProps } from './error.type';
 
-const ErrorDescription = styled.span`
-    font-size: 2rem;
+import { GRAYDARK, GRAY } from '../../../constants/color';
+
+const ErrorStyle = styled.div<IErrorProps>`
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+
+    color: ${GRAYDARK};
+    font-size: 3rem;
+
+    ${({ size }) => size === 'small' && css`
+        width: 1.25rem;
+        height: 1.25rem;
+
+        font-size: 0.9rem;
+    `}
+
+    border: 1px solid ${GRAY};
+    border-radius: 50%;
 `;
 
 export {
-    ErrorLayout,
-    ErrorDescription
-}
+    ErrorStyle
+};
