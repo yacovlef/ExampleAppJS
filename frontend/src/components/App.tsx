@@ -9,6 +9,7 @@ import Header from './@common/Header';
 import Main from './@common/Main';
 import Footer from './@common/Footer';
 
+import Auth from './Auth';
 import Index from './Index';
 import User from './User';
 
@@ -18,6 +19,11 @@ const App: FC = () => {
       <Header />
       <Main>
         <Switch>
+        <Route
+            path="/auth"
+            component={Auth}
+            exact />
+
           <Route
             path="/"
             component={Index}
