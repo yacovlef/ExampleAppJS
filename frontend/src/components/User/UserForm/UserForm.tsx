@@ -12,7 +12,7 @@ import { IUserFormUser, IUserFormProps, IUserFormRootState } from './user-form.t
 
 const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
 
-    const { loading } = useSelector(({ userForm }: IUserFormRootState) => userForm);
+    const { loading, error } = useSelector(({ userForm }: IUserFormRootState) => userForm);
 
     const dispatch = useDispatch();
 
@@ -71,6 +71,7 @@ const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
                         type="submit"
                         size="large"
                         loading={loading}
+                        error={error}
                         block>Сохранить</Button>
                 </UserFormRow>
             </Form>

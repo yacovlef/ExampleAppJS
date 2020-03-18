@@ -8,5 +8,6 @@ export interface IButtonStyleProps {
 
 export interface IButtonProps extends IButtonStyleProps {
     loading?: boolean;
+    error?: null | object;
     children: string;
 }

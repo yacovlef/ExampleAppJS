@@ -2,32 +2,23 @@ import styled, { css } from 'styled-components';
 
 import { IErrorProps } from './error.type';
 
-import { GRAYDARK, GRAY } from '../../../constants/color';
+import { GRAYDARK, RED } from '../../../constants/color';
 
-const ErrorStyle = styled.div<IErrorProps>`
-    margin: 0 auto;
+const ErrorLayout = styled.div`
+    text-align: center;
+`;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100px;
-    height: 100px;
-
+const ErrorTitle = styled.span<IErrorProps>`
     color: ${GRAYDARK};
-    font-size: 3rem;
+    font-size: 2rem;
 
     ${({ size }) => size === 'small' && css`
-        width: 1.25rem;
-        height: 1.25rem;
-
-        font-size: 0.9rem;
+        color: ${RED};
+        font-size: 1.25rem;
     `}
-
-    border: 1px solid ${GRAY};
-    border-radius: 50%;
 `;
 
 export {
-    ErrorStyle
+    ErrorLayout,
+    ErrorTitle
 };

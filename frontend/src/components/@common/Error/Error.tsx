@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 
-import { ErrorStyle } from './error.style';
+import { IErrorProps } from './error.type';
 
-const Error: FC = () => {
-    return <ErrorStyle title="Ошибка">!</ErrorStyle>;
+import { ErrorLayout, ErrorTitle } from './error.style';
+
+const Error: FC<IErrorProps> = ({ size }) => {
+    return (
+        <ErrorLayout>
+            <ErrorTitle size={size}>Ошибка!</ErrorTitle>
+        </ErrorLayout>
+    );
 }
 
 export default Error;

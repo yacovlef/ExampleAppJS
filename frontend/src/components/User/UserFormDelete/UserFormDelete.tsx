@@ -15,7 +15,7 @@ import { submitUserFormDeleteAction } from './user-form-delete.action';
 const UserFormDelete: FC<IUserFormDeleteProps> = ({ user }) => {
     const { id, firstName, lastName } = user;
 
-    const { loading } = useSelector(({ userFormDelete }: IUserFormDeleteRootState) => userFormDelete);
+    const { loading, error } = useSelector(({ userFormDelete }: IUserFormDeleteRootState) => userFormDelete);
 
     const dispatch = useDispatch();
 
@@ -35,6 +35,7 @@ const UserFormDelete: FC<IUserFormDeleteProps> = ({ user }) => {
                     type="submit"
                     size="large"
                     loading={loading}
+                    error={error}
                     block>Удалить</Button>
             </UserFormDeleteRow>
         </UserFormDeleteForm>
