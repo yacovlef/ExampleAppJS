@@ -4,6 +4,7 @@ import 'normalize.css';
 
 import './app.css';
 
+import PrivateRoute from './@common/PrivateRoute';
 import Wrapper from './@common/Wrapper';
 import Header from './@common/Header';
 import Main from './@common/Main';
@@ -19,19 +20,17 @@ const App: FC = () => {
       <Header />
       <Main>
         <Switch>
-        <Route
-            path="/auth"
-            component={Auth}
-            exact />
+          <Route path="/auth" exact>
+            <Auth />
+          </Route>
 
-          <Route
-            path="/"
-            component={Index}
-            exact />
+          <PrivateRoute path="/" exact>
+            <Index />
+          </PrivateRoute>
 
-          <Route
-            path="/users"
-            component={User} />
+          <PrivateRoute path="/users">
+            <User />
+          </PrivateRoute>
         </Switch>
       </Main>
       <Footer />
