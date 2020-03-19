@@ -3,7 +3,7 @@ export interface IAuthUser {
 }
 
 export interface IAuthState {
-    user: object | null;
+    user: IAuthUser | null;
 }
 
 export interface IAuthRootState {
