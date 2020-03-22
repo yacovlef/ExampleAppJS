@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { GRAYDARK, GRAY } from '../../../constants/color';
 
@@ -16,7 +16,7 @@ const HeaderLayout = styled.div`
     padding: 1rem 0;
 `;
 
-const HeaderLogo = styled(Link)`
+const HeaderLogo = styled(NavLink)`
     text-decoration: none;
     text-align: center;
     font-size: 3rem;

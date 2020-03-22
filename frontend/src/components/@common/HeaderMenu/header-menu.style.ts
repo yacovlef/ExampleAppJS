@@ -76,6 +76,7 @@ const HeaderMenuItem = styled.li`
 
     @media (max-width: 768px) {
         text-align: center;
+        padding: 0.5rem 0;
         font-size: 2rem;
     }
 `;
