@@ -6,6 +6,8 @@ import {
 } from './auth.type';
 
 const authLoginAction = (payload: IAuthUser): IAuthActionTypes => {
+    localStorage.setItem('user', JSON.stringify(payload));
+
     return  {
         type: AUTH_LOGIN,
         payload
@@ -13,6 +15,8 @@ const authLoginAction = (payload: IAuthUser): IAuthActionTypes => {
 }
 
 const authLogoutAction = (): IAuthActionTypes => {
+    localStorage.removeItem('user');
+
     return  {
         type: AUTH_LOGOUT
     }
