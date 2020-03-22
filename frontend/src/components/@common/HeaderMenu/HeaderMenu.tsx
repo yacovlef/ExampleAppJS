@@ -43,7 +43,9 @@ const HeaderMenu: FC = () => {
     if (renderHeaderMenu && user) {
         renderHeaderMenu.push(
             <HeaderMenuItem key={renderHeaderMenu.length}>
-                <HeaderMenuItemLink to="#" onClick={() =>{dispatch(authLogoutAction())}}>{user.email} (Выход)</HeaderMenuItemLink>
+                <HeaderMenuItemLink to="#" onClick={() => {
+                    dispatch(authLogoutAction());
+                    handleHeaderMenuToggle()}}>{user.email} (Выход)</HeaderMenuItemLink>
             </HeaderMenuItem>
         );
     }
