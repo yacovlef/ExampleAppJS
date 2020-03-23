@@ -1,3 +1,5 @@
+import { setCountUserPaginationAction } from '../UserPagination/user-pagination.action';
+
 import { IUserListItem } from '../UserListItem/user-list-item.type';
 
 import {
@@ -34,12 +36,12 @@ const fetchUserListAction = (): IFetchUserListThunkActionTypes => (dispatch) => 
     dispatch(fetchUserListRequestAction());
     
     fetchUserListService()
-        .then(({ data: [data] }) => {
-            dispatch(fetchUserListSuccessAction(data))
+        .then(({ data: [data, count] }) => {
+            dispatch(fetchUserListSuccessAction(data));
+            dispatch(setCountUserPaginationAction(count));
         })
         .catch((error) => dispatch(fetchUserListFailureAction(error)));
 };
-
 
 export {
     fetchUserListAction

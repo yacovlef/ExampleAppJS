@@ -14,7 +14,7 @@ import UserListItem from '../UserListItem';
 import { UserListLayout } from './user-list.style';
 
 const UserList: FC = () => {
-    const {data, loading, error} = useSelector(({ userList }: IUserListRootState) => userList);
+    const { data, loading, error } = useSelector(({ userList }: IUserListRootState) => userList);
 
     const hasLoading = useLoading(loading);
 

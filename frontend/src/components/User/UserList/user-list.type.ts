@@ -1,6 +1,7 @@
 import { ThunkAction } from 'redux-thunk';
 
 import { IUserListItem } from '../UserListItem/user-list-item.type';
+import { IFetchUserPaginationActionTypes } from '../UserPagination/user-pagination.type';
 
 export interface IUserListState {
     data: IUserListItem[];
@@ -32,4 +33,4 @@ interface IFetchUserListFailureAction {
 
 export type IFetchUserListActionTypes = IFetchUserListRequestAction | IFetchUserListSuccessAction | IFetchUserListFailureAction;
 
-export type IFetchUserListThunkActionTypes = ThunkAction<void, undefined, undefined, IFetchUserListActionTypes>;
+export type IFetchUserListThunkActionTypes = ThunkAction<void, undefined, undefined, IFetchUserListActionTypes | IFetchUserPaginationActionTypes>;
