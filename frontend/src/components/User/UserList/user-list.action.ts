@@ -34,7 +34,9 @@ const fetchUserListAction = (): IFetchUserListThunkActionTypes => (dispatch) => 
     dispatch(fetchUserListRequestAction());
     
     fetchUserListService()
-        .then(({ data }) => dispatch(fetchUserListSuccessAction(data)))
+        .then(({ data: [data] }) => {
+            dispatch(fetchUserListSuccessAction(data))
+        })
         .catch((error) => dispatch(fetchUserListFailureAction(error)));
 };
 
