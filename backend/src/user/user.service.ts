@@ -11,10 +11,12 @@ export class UserService {
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>,
     ) {}
-
-    async showAll(): Promise<UserEntity[]> {
-        return await this.userRepository.find({ 
-            order: {createdAt: 'DESC'}
+    
+    async showAll(take: number, skip: number): Promise<[UserEntity[], number]> {
+        return await this.userRepository.findAndCount({ 
+            order: {createdAt: 'DESC'},
+            skip,
+            take
         });
     }
 

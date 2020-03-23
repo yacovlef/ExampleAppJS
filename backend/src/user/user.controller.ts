@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Request } from '@nestjs/common';
 
 import { UserService } from './user.service';
 import { UserDTO } from './user.dto';
@@ -8,8 +8,10 @@ export class UserController {
     constructor(private userService: UserService) {}
 
     @Get()
-    index() {
-        return this.userService.showAll();
+    index(@Request() request) {
+        const { take, skip } = request.query;
+
+        return this.userService.showAll(take, skip);
     }
 
     @Post()
