@@ -6,6 +6,7 @@ import {
     FETCH_USER_LIST_REQUEST,
     FETCH_USER_LIST_SUCCESS,
     FETCH_USER_LIST_FAILURE,
+    ADD_USER_LIST,
     IFetchUserListActionTypes,
     IFetchUserListThunkActionTypes
 } from './user-list.type';
@@ -43,6 +44,14 @@ const fetchUserListAction = (): IFetchUserListThunkActionTypes => (dispatch) => 
         .catch((error) => dispatch(fetchUserListFailureAction(error)));
 };
 
+const addUserListAction = (payload: IUserListItem[]): IFetchUserListActionTypes => {
+    return  {
+        type: ADD_USER_LIST,
+        payload
+    }
+}
+
 export {
-    fetchUserListAction
+    fetchUserListAction,
+    addUserListAction
 };

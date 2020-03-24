@@ -7,6 +7,8 @@ import {
     IFetchUserPaginationThunkActionTypes
 } from './user-pagination.type';
 
+import { addUserListAction } from '../UserList/user-list.action';
+
 import { fetchUserListService } from '../UserList/user-list.service';
 
 const setCountUserPaginationAction = (payload: number): IFetchUserPaginationActionTypes => {
@@ -38,7 +40,8 @@ const fetchUserPaginationFailureAction = (payload: object): IFetchUserPagination
 const fetchUserPaginationAction = (): IFetchUserPaginationThunkActionTypes => (dispatch) => {
     dispatch(fetchUserPaginationRequestAction());
     fetchUserListService()
-        .then(() => {
+        .then(({ data: [data] }) => {
+            dispatch(addUserListAction(data));
             dispatch(fetchUserPaginationSuccessAction())
         })
         .catch((error) => dispatch(fetchUserPaginationFailureAction(error)));

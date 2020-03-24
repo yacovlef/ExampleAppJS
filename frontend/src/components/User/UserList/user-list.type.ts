@@ -16,6 +16,7 @@ export interface IUserListRootState {
 export const FETCH_USER_LIST_REQUEST = 'FETCH_USER_LIST_REQUEST';
 export const FETCH_USER_LIST_SUCCESS = 'FETCH_USER_LIST_SUCCESS';
 export const FETCH_USER_LIST_FAILURE = 'FETCH_USER_LIST_FAILURE';
+export const ADD_USER_LIST = 'ADD_USER_LIST';
 
 interface IFetchUserListRequestAction {
     type: typeof FETCH_USER_LIST_REQUEST;
@@ -31,6 +32,11 @@ interface IFetchUserListFailureAction {
     payload: object;
 }
 
-export type IFetchUserListActionTypes = IFetchUserListRequestAction | IFetchUserListSuccessAction | IFetchUserListFailureAction;
+interface IAddUserListAction {
+    type: typeof ADD_USER_LIST;
+    payload: IUserListItem[];
+}
+
+export type IFetchUserListActionTypes = IFetchUserListRequestAction | IFetchUserListSuccessAction | IFetchUserListFailureAction | IAddUserListAction;
 
 export type IFetchUserListThunkActionTypes = ThunkAction<void, undefined, undefined, IFetchUserListActionTypes | IFetchUserPaginationActionTypes>;

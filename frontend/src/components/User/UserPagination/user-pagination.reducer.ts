@@ -26,6 +26,7 @@ const userPaginationReducer = (state = initialState, action: IFetchUserPaginatio
         case FETCH_USER_PAGINATION_REQUEST:
             return {
                 ...state,
+                skip: state.skip + state.take,
                 loading: true,
                 error: null
             };
@@ -39,6 +40,7 @@ const userPaginationReducer = (state = initialState, action: IFetchUserPaginatio
         case FETCH_USER_PAGINATION_FAILURE:
             return {
                 ...state,
+                skip: state.skip - state.take,
                 loading: false,
                 error: action.payload
             };

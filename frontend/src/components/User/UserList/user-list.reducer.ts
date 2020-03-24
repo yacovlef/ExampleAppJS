@@ -2,6 +2,7 @@ import {
     FETCH_USER_LIST_REQUEST,
     FETCH_USER_LIST_SUCCESS,
     FETCH_USER_LIST_FAILURE,
+    ADD_USER_LIST,
     IFetchUserListActionTypes,
     IUserListState
 } from './user-list.type';
@@ -33,6 +34,15 @@ const userListReducer = (state = initialState, action: IFetchUserListActionTypes
                 ...state,
                 loading: false,
                 error: action.payload
+            };
+
+        case ADD_USER_LIST:
+            return {
+                ...state,
+                data: [
+                    ...state.data,
+                    ...action.payload
+                ]
             };
 
         default:
