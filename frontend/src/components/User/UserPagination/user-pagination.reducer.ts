@@ -9,6 +9,8 @@ import {
 
 const initialState: IUserPaginationState = {
     count: 0,
+    take: 5,
+    skip: 0,
     loading: false,
     error: null
 }

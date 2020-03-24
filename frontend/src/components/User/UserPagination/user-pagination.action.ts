@@ -37,7 +37,6 @@ const fetchUserPaginationFailureAction = (payload: object): IFetchUserPagination
 
 const fetchUserPaginationAction = (): IFetchUserPaginationThunkActionTypes => (dispatch) => {
     dispatch(fetchUserPaginationRequestAction());
-    
     fetchUserListService()
         .then(() => {
             dispatch(fetchUserPaginationSuccessAction())

@@ -3,8 +3,14 @@ import { ThunkAction } from 'redux-thunk';
 
 export interface IUserPaginationState {
     count: number;
+    take: number;
+    skip: number;
     loading: boolean;
     error: null | object;
+}
+
+export interface IUserPaginationRootState {
+    userPagination: IUserPaginationState
 }
 
 export const SET_COUNT_USER_PAGINATION = 'SET_COUNT_USER_PAGINATION';
