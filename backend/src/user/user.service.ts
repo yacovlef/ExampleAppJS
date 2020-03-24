@@ -12,11 +12,10 @@ export class UserService {
         private readonly userRepository: Repository<UserEntity>,
     ) {}
     
-    async showAll(take: number, skip: number): Promise<[UserEntity[], number]> {
+    async showAll(options: object): Promise<[UserEntity[], number]> {
         return await this.userRepository.findAndCount({ 
             order: {createdAt: 'DESC'},
-            skip,
-            take
+            ...options
         });
     }
 

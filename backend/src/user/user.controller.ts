@@ -11,7 +11,7 @@ export class UserController {
     index(@Request() request) {
         const { take, skip } = request.query;
 
-        return this.userService.showAll(take, skip);
+        return this.userService.showAll({take, skip});
     }
 
     @Post()
