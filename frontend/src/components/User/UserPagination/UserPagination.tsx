@@ -10,11 +10,11 @@ import { fetchUserPaginationAction } from './user-pagination.action';
 import { UserPaginationLayout } from './user-pagination.style';
 
 const UserPagination: FC = () => {
-    const { count, take } = useSelector(({ userPagination }: IUserPaginationRootState) => userPagination);
+    const { count, limit } = useSelector(({ userPagination }: IUserPaginationRootState) => userPagination);
 
     const dispatch = useDispatch();
 
-    if (!(count > take)) {
+    if (count < limit) {
         return null;
     }
 

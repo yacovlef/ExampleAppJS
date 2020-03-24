@@ -11,6 +11,7 @@ const initialState: IUserPaginationState = {
     count: 0,
     take: 5,
     skip: 0,
+    limit: 5,
     loading: false,
     error: null
 }
@@ -34,6 +35,7 @@ const userPaginationReducer = (state = initialState, action: IFetchUserPaginatio
         case FETCH_USER_PAGINATION_SUCCESS:
             return {
                 ...state,
+                limit: state.skip + state.take,
                 loading: false
             };
 

@@ -1,3 +1,5 @@
+import store from '../../../store';
+
 import {
     SET_COUNT_USER_PAGINATION,
     FETCH_USER_PAGINATION_REQUEST,
@@ -39,7 +41,10 @@ const fetchUserPaginationFailureAction = (payload: object): IFetchUserPagination
 
 const fetchUserPaginationAction = (): IFetchUserPaginationThunkActionTypes => (dispatch) => {
     dispatch(fetchUserPaginationRequestAction());
-    fetchUserListService()
+
+    const { userPagination: { take, skip } } = store.getState();
+    
+    fetchUserListService({take, skip})
         .then(({ data: [data] }) => {
             dispatch(addUserListAction(data));
             dispatch(fetchUserPaginationSuccessAction())

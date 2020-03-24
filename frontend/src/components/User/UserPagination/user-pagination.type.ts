@@ -7,6 +7,7 @@ export interface IUserPaginationState {
     count: number;
     take: number;
     skip: number;
+    limit: number;
     loading: boolean;
     error: null | object;
 }
