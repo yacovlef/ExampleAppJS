@@ -12,19 +12,19 @@ export class UserService {
         private readonly userRepository: Repository<UserEntity>,
     ) {}
     
-    async showAll(options: object): Promise<[UserEntity[], number]> {
+    async getAll(options: object): Promise<[UserEntity[], number]> {
         return await this.userRepository.findAndCount({ 
             order: {createdAt: 'DESC'},
             ...options
         });
     }
 
-    async create(data: UserDTO) {
-        return await this.userRepository.insert(data);
+    async getOne(email: string): Promise<UserEntity> {
+        return await this.userRepository.findOne({email});
     }
 
-    async show(id: number): Promise<UserEntity> {
-        return await this.userRepository.findOne(id);
+    async create(data: UserDTO) {
+        return await this.userRepository.insert(data);
     }
 
     async update(id: number, data: UserDTO) {
