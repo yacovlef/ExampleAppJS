@@ -1,24 +1,44 @@
 import {
-    IAuthState,
-    AUTH_LOGIN,
-    AUTH_LOGOUT,
-    IAuthActionTypes
+    FETCH_AUTH_REQUEST,
+    FETCH_AUTH_SUCCESS,
+    FETCH_AUTH_FAILURE,
+    SET_AUTH_LOGOUT,
+    IFetchAuthActionTypes,
+    IAuthState
 } from './auth.type';
 
 const initialState: IAuthState = {
-    user: null
+    user: null,
+    loading: false,
+    error: null
 }
 
-const authReducer = (state = initialState, action: IAuthActionTypes): IAuthState => {
+const authReducer = (state = initialState, action: IFetchAuthActionTypes): IAuthState => {
     switch (action.type) {
-        case AUTH_LOGIN:
+        case FETCH_AUTH_REQUEST:
             return {
-                user: action.payload
+                ...state,
+                loading: true,
+                error: null
             };
 
-        case AUTH_LOGOUT:
+        case FETCH_AUTH_SUCCESS:
             return {
-                user: null
+                ...state,
+                user: action.payload,
+                loading: false
+            };
+
+        case FETCH_AUTH_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            };
+
+        case SET_AUTH_LOGOUT:
+            return {
+                ...initialState
             };
 
         default:

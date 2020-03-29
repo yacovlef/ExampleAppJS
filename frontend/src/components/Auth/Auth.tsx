@@ -28,19 +28,19 @@ const Auth: FC = () => {
                 <AuthHeader>Вход</AuthHeader>
                     <Formik
                         initialValues = {{
-                            email: '',
+                            username: '',
                             password: ''}}
                         validationSchema = {Yup.object({
-                            email: Yup.string().email('Не корректная эл. почта').required('Обязательно'),
+                            username: Yup.string().email('Не корректная эл. почта').required('Обязательно'),
                             password: Yup.string().required('Обязательно')
                         })}
-                        onSubmit = {({ email }) => {dispatch(authLoginAction({email}))}}>
+                        onSubmit = {(auth) => {dispatch(authLoginAction(auth))}}>
 
                     <Form>
                         <AuthRow>
                             <Input
                                 label="Эл. почта"
-                                name="email"
+                                name="username"
                                 type="text" />
                         </AuthRow>
 
