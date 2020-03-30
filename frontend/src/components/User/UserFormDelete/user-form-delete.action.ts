@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+
 import {
     SUBMIT_USER_FORM_DELETE_REQUEST,
     SUBMIT_USER_FORM_DELETE_SUCCESS,
@@ -24,10 +26,10 @@ const submitUserFormDeleteSuccessAction = (): ISubmitUserFormDeleteActionTypes =
     }
 }
 
-const submitUserFormDeleteFailureAction = (error: object): ISubmitUserFormDeleteActionTypes => {
+const submitUserFormDeleteFailureAction = (payload: AxiosError): ISubmitUserFormDeleteActionTypes => {
     return  {
         type: SUBMIT_USER_FORM_DELETE_FAILURE,
-        payload: error
+        payload
     }
 }
 

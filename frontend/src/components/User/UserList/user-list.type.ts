@@ -1,4 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
+import { AxiosError } from 'axios';
 
 import { IUserListItem } from '../UserListItem/user-list-item.type';
 import { IFetchUserPaginationActionTypes } from '../UserPagination/user-pagination.type';
@@ -6,7 +7,7 @@ import { IFetchUserPaginationActionTypes } from '../UserPagination/user-paginati
 export interface IUserListState {
     data: IUserListItem[];
     loading: boolean;
-    error: null | object;
+    error: AxiosError | null;
 }
 
 export interface IUserListRootState {
@@ -29,7 +30,7 @@ interface IFetchUserListSuccessAction {
 
 interface IFetchUserListFailureAction {
     type: typeof FETCH_USER_LIST_FAILURE;
-    payload: object;
+    payload: AxiosError;
 }
 
 interface IAddUserListAction {

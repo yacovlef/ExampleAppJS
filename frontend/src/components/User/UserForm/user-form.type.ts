@@ -1,4 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
+import { AxiosError } from 'axios';
 
 import { IModalActionTypes } from '../../@common/Modal/modal.type';
 
@@ -22,7 +23,7 @@ export interface IUserFormProps {
 
 export interface IUserFormState {
     loading: boolean;
-    error: null | object;
+    error: AxiosError | null;
 }
 
 export interface IUserFormRootState {
@@ -43,7 +44,7 @@ interface ISubmitUserFormSuccessAction {
 
 interface ISubmitUserFormFailureAction {
     type: typeof SUBMIT_USER_FORM_FAILURE;
-    payload: object;
+    payload: AxiosError;
 }
 
 export type ISubmitUserFormActionTypes = ISubmitUserFormRequestAction | ISubmitUserFormSuccessAction | ISubmitUserFormFailureAction;

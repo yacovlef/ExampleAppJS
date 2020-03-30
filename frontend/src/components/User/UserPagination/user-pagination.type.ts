@@ -1,5 +1,6 @@
 
 import { ThunkAction } from 'redux-thunk';
+import { AxiosError } from 'axios';
 
 import { IFetchUserListActionTypes } from '../UserList/user-list.type';
 
@@ -9,7 +10,7 @@ export interface IUserPaginationState {
     skip: number;
     limit: number;
     loading: boolean;
-    error: null | object;
+    error: AxiosError | null;
 }
 
 export interface IUserPaginationRootState {
@@ -36,7 +37,7 @@ interface IFetchUserPaginationSuccessAction {
 
 interface IFetchUserPaginationFailureAction {
     type: typeof FETCH_USER_PAGINATION_FAILURE;
-    payload: object;
+    payload: AxiosError;
 }
 
 export type IFetchUserPaginationActionTypes = ISetCountUserPagination | IFetchUserPaginationRequestAction | IFetchUserPaginationSuccessAction | IFetchUserPaginationFailureAction;

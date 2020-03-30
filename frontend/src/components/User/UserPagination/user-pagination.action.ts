@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+
 import store from '../../../store';
 
 import {
@@ -32,7 +34,7 @@ const fetchUserPaginationSuccessAction = (): IFetchUserPaginationActionTypes => 
     }
 }
 
-const fetchUserPaginationFailureAction = (payload: object): IFetchUserPaginationActionTypes => {
+const fetchUserPaginationFailureAction = (payload: AxiosError): IFetchUserPaginationActionTypes => {
     return  {
         type: FETCH_USER_PAGINATION_FAILURE,
         payload

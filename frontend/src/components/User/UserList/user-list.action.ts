@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+
 import store from '../../../store';
 
 import { setCountUserPaginationAction } from '../UserPagination/user-pagination.action';
@@ -28,10 +30,10 @@ const fetchUserListSuccessAction = (payload: IUserListItem[]): IFetchUserListAct
     }
 }
 
-const fetchUserListFailureAction = (error: object): IFetchUserListActionTypes => {
+const fetchUserListFailureAction = (payload: AxiosError): IFetchUserListActionTypes => {
     return  {
         type: FETCH_USER_LIST_FAILURE,
-        payload: error
+        payload
     }
 }
 

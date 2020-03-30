@@ -1,4 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
+import { AxiosError } from 'axios';
 
 import { IUserListItem } from '../UserListItem/user-list-item.type';
 import { IModalActionTypes } from '../../@common/Modal/modal.type';
@@ -9,7 +10,7 @@ export interface IUserFormDeleteProps {
 
 export interface IUserFormDeleteState {
     loading: boolean;
-    error: null | object;
+    error: AxiosError | null;
 }
 
 export interface IUserFormDeleteRootState {
@@ -30,7 +31,7 @@ interface ISubmitUserFormDeleteSuccessAction {
 
 interface ISubmitUserFormDeleteFailureAction {
     type: typeof SUBMIT_USER_FORM_DELETE_FAILURE;
-    payload: object;
+    payload: AxiosError;
 }
 
 export type ISubmitUserFormDeleteActionTypes = ISubmitUserFormDeleteRequestAction | ISubmitUserFormDeleteSuccessAction | ISubmitUserFormDeleteFailureAction;

@@ -1,3 +1,5 @@
+import { AxiosError } from 'axios';
+
 import {
     IUserFormUser,
     SUBMIT_USER_FORM_REQUEST,
@@ -25,10 +27,10 @@ const submitUserFormSuccessAction = (): ISubmitUserFormActionTypes => {
     }
 }
 
-const submitUserFormFailureAction = (error: object): ISubmitUserFormActionTypes => {
+const submitUserFormFailureAction = (payload: AxiosError): ISubmitUserFormActionTypes => {
     return  {
         type: SUBMIT_USER_FORM_FAILURE,
-        payload: error
+        payload
     }
 }
 
