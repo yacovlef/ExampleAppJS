@@ -3,9 +3,9 @@ import React, { FC } from 'react';
 import Loading from '../Loading';
 import Error from '../Error';
 
-import { IButtonProps } from './buttom.type';
+import { IButtonProps } from './button.type';
 
-import { ButtonStyle } from './style.button';
+import { ButtonStyle } from './button.style';
 
 const Button: FC<IButtonProps> = ({ loading, error, children, ...props }) => {
 

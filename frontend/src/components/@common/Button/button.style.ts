@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { IButtonStyleProps } from './buttom.type';
+import { IButtonStyleProps } from './button.type';
 
 import { GRAYDARK } from '../../../constants/color';
 
@@ -18,7 +18,6 @@ const ButtonStyle = styled.button<IButtonStyleProps>`
     }
 
     ${({ size }) => size === 'large' && css`
-        font-size: 1.25rem;
         padding: 0.5rem;
     `}
 
