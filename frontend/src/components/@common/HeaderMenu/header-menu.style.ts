@@ -19,8 +19,8 @@ const HeaderMenuToggleOpen = styled.div`
 const HeaderMenuToggleOpenImage = styled(MenuOpen)`
     cursor: pointer;
     
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     fill: ${GRAY};
 `;
 
@@ -39,8 +39,8 @@ const HeaderMenuToggleClose = styled.div`
 const HeaderMenuToggleCloseImage = styled(MenuClose)`
     cursor: pointer;
     
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     fill: ${GRAY};
 `;
 
