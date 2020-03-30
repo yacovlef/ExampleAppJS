@@ -14,7 +14,7 @@ const UserPagination: FC = () => {
 
     const dispatch = useDispatch();
 
-    if (count < limit) {
+    if (count <= limit) {
         return null;
     }
 
