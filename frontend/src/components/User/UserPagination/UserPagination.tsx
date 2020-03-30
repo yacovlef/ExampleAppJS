@@ -10,7 +10,7 @@ import { fetchUserPaginationAction } from './user-pagination.action';
 import { UserPaginationLayout } from './user-pagination.style';
 
 const UserPagination: FC = () => {
-    const { count, limit } = useSelector(({ userPagination }: IUserPaginationRootState) => userPagination);
+    const { count, limit, loading, error } = useSelector(({ userPagination }: IUserPaginationRootState) => userPagination);
 
     const dispatch = useDispatch();
 
@@ -20,7 +20,11 @@ const UserPagination: FC = () => {
 
     return (
         <UserPaginationLayout>
-            <Button onClick={() => {dispatch(fetchUserPaginationAction())}} responsive size='large'>Показать ещё...</Button>
+            <Button onClick={() => {dispatch(fetchUserPaginationAction())}}
+                responsive
+                size='large'
+                loading={loading}
+                error={error}>Показать ещё...</Button>
         </UserPaginationLayout>
     );
 }
