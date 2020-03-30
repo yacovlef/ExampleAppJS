@@ -21,9 +21,14 @@ const AuthHeader = styled(AuthRow)`
     text-align: center;
 `;
 
+const AuthUnauthorized = styled(AuthRow)`
+    text-align: center;
+`;
+
 export {
     AuthLayout,
     AuthForm,
     AuthRow,
-    AuthHeader
+    AuthHeader,
+    AuthUnauthorized
 };

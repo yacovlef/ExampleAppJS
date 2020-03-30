@@ -11,12 +11,12 @@ import { IAuthRootState } from './auth.type'
 
 import { authLoginAction } from './auth.action';
 
-import { AuthLayout, AuthForm, AuthRow, AuthHeader } from './auth.style';
+import { AuthLayout, AuthForm, AuthRow, AuthHeader, AuthUnauthorized } from './auth.style';
 
 const Auth: FC = () => {
     const dispatch = useDispatch();
 
-    const { user, loading, error } = useSelector(({ auth }: IAuthRootState) => auth);
+    const { user, loading, error, unauthorized } = useSelector(({ auth }: IAuthRootState) => auth);
 
     if (user) {
         return <Redirect to="/" />;
@@ -26,6 +26,9 @@ const Auth: FC = () => {
         <AuthLayout>
             <AuthForm>
                 <AuthHeader>Вход</AuthHeader>
+                    {unauthorized &&
+                        <AuthUnauthorized>Нет такого пользователя!</AuthUnauthorized>}
+
                     <Formik
                         initialValues = {{
                             username: '',

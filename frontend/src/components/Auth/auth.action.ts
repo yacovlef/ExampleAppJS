@@ -1,4 +1,5 @@
 import jwtDecode from 'jwt-decode';
+import { AxiosError } from 'axios';
 
 import {
     FETCH_AUTH_REQUEST,
@@ -26,10 +27,10 @@ const fetchAuthSuccessAction = (payload: IAuthUser): IFetchAuthActionTypes => {
     }
 }
 
-const fetchAuthFailureAction = (error: object): IFetchAuthActionTypes => {
+const fetchAuthFailureAction = (payload: AxiosError): IFetchAuthActionTypes => {
     return  {
         type: FETCH_AUTH_FAILURE,
-        payload: error
+        payload
     }
 }
 

@@ -10,7 +10,8 @@ import {
 const initialState: IAuthState = {
     user: null,
     loading: false,
-    error: null
+    error: null,
+    unauthorized: false
 }
 
 const authReducer = (state = initialState, action: IFetchAuthActionTypes): IAuthState => {
@@ -18,22 +19,33 @@ const authReducer = (state = initialState, action: IFetchAuthActionTypes): IAuth
         case FETCH_AUTH_REQUEST:
             return {
                 ...state,
-                loading: true,
-                error: null
+                loading: true
             };
 
         case FETCH_AUTH_SUCCESS:
             return {
                 ...state,
                 user: action.payload,
-                loading: false
+                loading: false,
+                error: null,
+                unauthorized: false
             };
 
         case FETCH_AUTH_FAILURE:
+            let unauthorized = false,
+                error = null;
+
+            if (action.payload.request.status === 401) {
+                unauthorized = true;
+            } else {
+                error = action.payload;
+            }
+
             return {
                 ...state,
                 loading: false,
-                error: action.payload
+                error,
+                unauthorized
             };
 
         case SET_AUTH_LOGOUT:

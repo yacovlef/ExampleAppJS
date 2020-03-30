@@ -1,4 +1,5 @@
 import { ThunkAction } from 'redux-thunk';
+import { AxiosError } from 'axios';
 
 export interface IAuth {
     username: string;
@@ -16,7 +17,8 @@ export interface IAuthUser {
 export interface IAuthState {
     user: IAuthUser | null;
     loading: boolean;
-    error: null | object;
+    error: null | AxiosError;
+    unauthorized: boolean;
 }
 
 export interface IAuthRootState {
@@ -39,7 +41,7 @@ interface IFetchAuthSuccessAction {
 
 interface IFetchAuthFailureAction {
     type: typeof FETCH_AUTH_FAILURE;
-    payload: object;
+    payload: AxiosError;
 }
 
 interface ISetAuthLogoutAction {
