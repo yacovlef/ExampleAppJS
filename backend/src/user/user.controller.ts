@@ -19,12 +19,12 @@ export class UserController {
 
     @Post()
     create(@Body() data: UserDTO) {
-        this.userService.create(data);
+        return this.userService.create(data);
     }
 
     @Put(':id')
     update(@Param('id') id:number, @Body() data: UserDTO) {
-        this.userService.update(id, data);
+        return this.userService.update(id, data);
     }
 
     @Delete(':id')
