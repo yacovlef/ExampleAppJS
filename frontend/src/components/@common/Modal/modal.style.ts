@@ -44,8 +44,8 @@ const ModalClose = styled.div``;
 const ModalCloseImage = styled(ModalCloseSvg)`
     cursor: pointer;
     
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     fill: ${GRAY};
 `;
 
