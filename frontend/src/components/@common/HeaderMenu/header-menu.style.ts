@@ -72,12 +72,12 @@ const HeaderMenuList = styled.ul<IHeaderMenuListProps>`
 const HeaderMenuItem = styled.li`
     display: block;
     padding: 0 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     @media (max-width: 768px) {
         text-align: center;
         padding: 0.5rem 0;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 `;
 

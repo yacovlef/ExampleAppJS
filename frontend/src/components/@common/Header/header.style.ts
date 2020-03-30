@@ -19,7 +19,7 @@ const HeaderLayout = styled.div`
 const HeaderLogo = styled(NavLink)`
     text-decoration: none;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: ${GRAY};
 `;
 
