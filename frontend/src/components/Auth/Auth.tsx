@@ -16,7 +16,7 @@ import { AuthLayout, AuthForm, AuthRow, AuthHeader } from './auth.style';
 const Auth: FC = () => {
     const dispatch = useDispatch();
 
-    const { user } = useSelector(({ auth }: IAuthRootState) => auth);
+    const { user, loading, error } = useSelector(({ auth }: IAuthRootState) => auth);
 
     if (user) {
         return <Redirect to="/" />;
@@ -55,6 +55,8 @@ const Auth: FC = () => {
                             <Button
                                 type="submit"
                                 size="large"
+                                loading={loading}
+                                error={error}
                                 block>Войти</Button>
                         </AuthRow>
                     </Form>
