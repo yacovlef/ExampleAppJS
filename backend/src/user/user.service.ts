@@ -15,6 +15,7 @@ export class UserService {
     
     async getAll(options: object): Promise<[UserEntity[], number]> {
         return await this.userRepository.findAndCount({ 
+            select: ['id', 'firstName', 'lastName', 'email'],
             order: {createdAt: 'DESC'},
             ...options
         });
@@ -32,6 +33,10 @@ export class UserService {
 
     async update(id: number, data: UserDTO) {
         const {createdAt, updatedAt, ...user} = data;
+
+        if (user.password) {
+            user.password = await bcrypt.hash(data.password, 10);
+        }
 
         return await this.userRepository.update({id}, user);
     }
