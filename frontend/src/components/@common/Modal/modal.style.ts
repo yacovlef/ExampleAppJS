@@ -36,7 +36,7 @@ const ModalHeader = styled.div`
 `;
 
 const ModalTitle = styled.div`
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 `;
 
 const ModalClose = styled.div``;
