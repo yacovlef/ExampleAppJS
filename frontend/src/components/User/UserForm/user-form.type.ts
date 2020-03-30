@@ -4,10 +4,14 @@ import { IModalActionTypes } from '../../@common/Modal/modal.type';
 
 import { submitUserFormCreateAction } from './user-form.action';
 
+export interface IUserFormValidate {
+    password?: string;
+}
+
 export interface IUserFormUser {
     id?: number;
-    lastName: string;
     firstName: string;
+    lastName: string;
     email: string;
 }
 

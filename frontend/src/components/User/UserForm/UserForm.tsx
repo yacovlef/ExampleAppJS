@@ -8,7 +8,7 @@ import { UserFormRow } from './user-form.style';
 import Input from '../../@common/Input';
 import Button from '../../@common/Button';
 
-import { IUserFormUser, IUserFormProps, IUserFormRootState } from './user-form.type';
+import { IUserFormValidate, IUserFormUser, IUserFormProps, IUserFormRootState } from './user-form.type';
 
 const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
 
@@ -19,14 +19,22 @@ const UserForm: FC<IUserFormProps> = ({ submitUserFormAction, user }) => {
     const values = {
         firstName: '',
         lastName: '',
-        email: '',
-        password: ''};
+        email: ''};
 
     const initialValues: IUserFormUser = user || values;
 
     return (
         <Formik
-            initialValues = {initialValues}
+            initialValues = {{...initialValues, password: ''}}
+            validate = {(values) => {
+                const errors: IUserFormValidate = {};
+                
+                if (!values.password && !user) {
+                    errors.password = 'Обязательно';
+                }
+
+                return errors;
+            }}
             validationSchema = {Yup.object({
                 firstName: Yup.string().required('Обязательно'),
                 lastName: Yup.string().required('Обязательно'),
