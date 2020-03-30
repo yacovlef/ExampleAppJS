@@ -5,8 +5,6 @@ import { IInputLabelProps } from './input.type';
 import { GRAYDARK } from '../../../constants/color';
 
 const InputLabel = styled.label<IInputLabelProps>`
-    font-size: 1.25rem;
-
     ${({ hasError }) => hasError && css`
         color: #ff0000;
     `}
@@ -21,7 +19,6 @@ const InputField = styled.input`
 
     width: 100%;
     padding: 0.5rem;
-    font-size: 1.25rem;
 `;
 
 const InputError = styled.span`
