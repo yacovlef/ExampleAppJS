@@ -4,19 +4,21 @@ import { IErrorProps } from './error.type';
 
 import { GRAYDARK, RED } from '../../../constants/color';
 
-const ErrorLayout = styled.div`
+const ErrorLayout = styled.div<IErrorProps>`
     text-align: center;
-`;
 
-const ErrorTitle = styled.span<IErrorProps>`
+    font-size: 1.5rem;
     color: ${GRAYDARK};
-    font-size: 2rem;
+    padding: 1rem 0;
 
     ${({ size }) => size === 'small' && css`
+        font-size: 1rem;
         color: ${RED};
-        font-size: 1.25rem;
+        padding: 0;
     `}
 `;
+
+const ErrorTitle = styled.span``;
 
 export {
     ErrorLayout,

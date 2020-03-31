@@ -6,8 +6,8 @@ import { ErrorLayout, ErrorTitle } from './error.style';
 
 const Error: FC<IErrorProps> = ({ size }) => {
     return (
-        <ErrorLayout>
-            <ErrorTitle size={size}>Ошибка!</ErrorTitle>
+        <ErrorLayout size={size}>
+            <ErrorTitle>Ошибка!</ErrorTitle>
         </ErrorLayout>
     );
 }
