@@ -9,6 +9,7 @@ import Wrapper from './@common/Wrapper';
 import Header from './@common/Header';
 import Main from './@common/Main';
 import Footer from './@common/Footer';
+import NotFound from './@common/NotFound';
 
 import Auth from './Auth';
 import Index from './Index';
@@ -31,6 +32,10 @@ const App: FC = () => {
           <PrivateRoute path="/users">
             <User />
           </PrivateRoute>
+
+          <Route>
+            <NotFound />
+          </Route>
         </Switch>
       </Main>
       <Footer />
