@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 import { ILoadingProps } from './loading.type';
 
-import { GRAYLIGHT, GRAYDARK } from '../../../constants/color';
+import { COLORLIGHT, COLORDARK } from '../../../constants/color';
 
 const loadingAnimation = keyframes`
     from {
@@ -25,8 +25,8 @@ const Loading = styled.div<ILoadingProps>`
         height: 1.25rem;
     `}
 
-    border: 1px solid ${GRAYLIGHT};
-    border-top: 1px solid ${GRAYDARK};
+    border: 1px solid ${COLORLIGHT};
+    border-top: 1px solid ${COLORDARK};
     border-radius: 50%;
 
     animation: ${loadingAnimation} 1s linear infinite;

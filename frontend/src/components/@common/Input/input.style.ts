@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { IInputLabelProps } from './input.type';
 
-import { GRAYDARK } from '../../../constants/color';
+import { COLORDARK } from '../../../constants/color';
 
 const InputLabel = styled.label<IInputLabelProps>`
     ${({ hasError }) => hasError && css`
@@ -11,9 +11,9 @@ const InputLabel = styled.label<IInputLabelProps>`
 `;
 
 const InputField = styled.input`
-    border: 1px solid ${GRAYDARK};
+    border: 1px solid ${COLORDARK};
     border-radius: 2.5px;
-    color: ${GRAYDARK};
+    color: ${COLORDARK};
 
     box-sizing: border-box;
 

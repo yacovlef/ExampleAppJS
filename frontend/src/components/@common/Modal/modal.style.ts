@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ReactComponent as ModalCloseSvg } from '../../../images/close.svg';
 
-import { GRAY } from '../../../constants/color';
+import { COLOR } from '../../../constants/color';
 
 const ModalOverlay = styled.div`
     position: fixed;
@@ -46,7 +46,7 @@ const ModalCloseImage = styled(ModalCloseSvg)`
     
     width: 2rem;
     height: 2rem;
-    fill: ${GRAY};
+    fill: ${COLOR};
 `;
 
 const ModalBody = styled.div``;

@@ -20,7 +20,7 @@ import {
     HeaderMenuItemLink
 } from './header-menu.style';
 
-import { GRAYLIGHT } from '../../../constants/color';
+import { COLORLIGHT } from '../../../constants/color';
 
 const HeaderMenu: FC = () => {
     const [headerMenuToggle, setHeaderMenuToggle] = useState(false);
@@ -37,7 +37,7 @@ const HeaderMenu: FC = () => {
         ? headerMenuListData.map(({label, to}: IHeaderMenuListData, index: number) => {
             return (
                 <HeaderMenuItem key={index}>
-                    <HeaderMenuItemLink to={to} onClick={handleHeaderMenuToggle} activeStyle={{color: GRAYLIGHT}}>{label}</HeaderMenuItemLink>
+                    <HeaderMenuItemLink to={to} onClick={handleHeaderMenuToggle} activeStyle={{color: COLORLIGHT}}>{label}</HeaderMenuItemLink>
                 </HeaderMenuItem>
             )
         }) : null;

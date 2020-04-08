@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { GRAYDARK } from '../../../constants/color';
+import { COLORDARK } from '../../../constants/color';
 
 const NotFoundLayout = styled.div`
     padding: 1rem;
@@ -8,7 +8,7 @@ const NotFoundLayout = styled.div`
 `;
 
 const NotFoundTitle = styled.span`
-    color: ${GRAYDARK};
+    color: ${COLORDARK};
     font-size: 1.5rem;
 `;
 

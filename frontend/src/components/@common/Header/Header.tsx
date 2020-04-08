@@ -8,8 +8,6 @@ import {
     HeaderLogo
 } from './header.style';
 
-import { GRAYLIGHT } from '../../../constants/color';
-
 import Container from '../Container';
 
 const Header: FC = () => {
@@ -19,7 +17,7 @@ const Header: FC = () => {
         <HeaderWrapper>
             <Container>
                 <HeaderLayout>
-                    <HeaderLogo exact to="/" activeStyle={{color: GRAYLIGHT}}>
+                    <HeaderLogo exact to="/" >
                         {REACT_APP_TITLE}
                     </HeaderLogo>
 

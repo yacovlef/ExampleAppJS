@@ -6,7 +6,7 @@ import { IHeaderMenuListProps } from './header-menu.type';
 import { ReactComponent as MenuOpen } from '../../../images/menu_open.svg';
 import { ReactComponent as MenuClose } from '../../../images/close.svg';
 
-import { GRAYDARK, GRAY } from '../../../constants/color';
+import { COLORDARK, COLOR } from '../../../constants/color';
 
 const HeaderMenuLayout = styled.nav``;
 
@@ -21,7 +21,7 @@ const HeaderMenuToggleOpenImage = styled(MenuOpen)`
     
     width: 2rem;
     height: 2rem;
-    fill: ${GRAY};
+    fill: ${COLOR};
 `;
 
 const HeaderMenuToggleClose = styled.div`
@@ -41,7 +41,7 @@ const HeaderMenuToggleCloseImage = styled(MenuClose)`
     
     width: 2rem;
     height: 2rem;
-    fill: ${GRAY};
+    fill: ${COLOR};
 `;
 
 const HeaderMenuList = styled.ul<IHeaderMenuListProps>`
@@ -65,7 +65,7 @@ const HeaderMenuList = styled.ul<IHeaderMenuListProps>`
         
         flex-direction: column;
 
-        background-color: ${GRAYDARK}
+        background-color: ${COLORDARK}
     }
 `;
 
@@ -82,7 +82,7 @@ const HeaderMenuItem = styled.li`
 `;
 
 const HeaderMenuItemLink = styled(NavLink)`
-    color: ${GRAY};
+    color: ${COLOR};
     text-decoration: none;
 `;
 

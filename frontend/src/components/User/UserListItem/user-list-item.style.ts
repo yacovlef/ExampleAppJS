@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { GRAY, GRAYLIGHT } from '../../../constants/color';
+import { COLOR, COLORLIGHT } from '../../../constants/color';
 
 const UserListItemLayout = styled.div`
     display: flex;
@@ -9,7 +9,7 @@ const UserListItemLayout = styled.div`
 
     border-radius: 5px;
 
-    background-color: ${GRAYLIGHT};
+    background-color: ${COLORLIGHT};
 
     white-space: nowrap;
 
@@ -36,7 +36,7 @@ const UserListItemRow = styled.div`
 
 const UserListItemLabel = styled.span`
     font-size: 0.9rem;
-    color: ${GRAY};
+    color: ${COLOR};
 `;
 
 export {

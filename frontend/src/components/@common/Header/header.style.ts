@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { GRAYDARK, GRAY } from '../../../constants/color';
+import { COLORDARK, COLOR } from '../../../constants/color';
 
 const HeaderWrapper = styled.header`
-    background-color: ${GRAYDARK};
+    background-color: ${COLORDARK};
 
     flex: 0 0 auto;
 `;
@@ -20,7 +20,7 @@ const HeaderLogo = styled(NavLink)`
     text-decoration: none;
     text-align: center;
     font-size: 2rem;
-    color: ${GRAY};
+    color: ${COLOR};
 `;
 
 export {

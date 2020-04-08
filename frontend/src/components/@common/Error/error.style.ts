@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components';
 
 import { IErrorProps } from './error.type';
 
-import { GRAYDARK, RED } from '../../../constants/color';
+import { COLORDARK, RED } from '../../../constants/color';
 
 const ErrorLayout = styled.div<IErrorProps>`
     text-align: center;
 
     font-size: 1.5rem;
-    color: ${GRAYDARK};
+    color: ${COLORDARK};
     padding: 1rem 0;
 
     ${({ size }) => size === 'small' && css`
